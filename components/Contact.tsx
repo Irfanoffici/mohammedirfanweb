@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export function Contact() {
     return (
-        <section id="contact" className="py-32 px-6 md:px-12 bg-black min-h-[60vh] flex flex-col justify-center relative overflow-hidden">
+        <section id="contact" className="py-32 px-6 md:px-12 bg-background min-h-[60vh] flex flex-col justify-center relative overflow-hidden">
 
             {/* Background Glow */}
             <div className="absolute inset-0 bg-gradient-to-t from-accent/5 to-transparent pointer-events-none" />
@@ -17,14 +17,14 @@ export function Contact() {
                         Construct
                     </p>
 
-                    <h2 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter text-white mb-12">
+                    <h2 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter text-foreground mb-12">
                         READY TO START<br />A NEW PROJECT?
                     </h2>
 
                     <div className="flex flex-col items-center gap-8 mb-20">
                         <a
                             href="mailto:mailtomohammedirfank@gmail.com"
-                            className="group relative inline-flex items-center gap-3 px-8 py-4 bg-white text-black rounded-full font-bold tracking-wide hover:bg-accent hover:text-white transition-all duration-300"
+                            className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-foreground text-background rounded-full font-bold tracking-wide hover:bg-accent hover:text-white transition-all duration-300 w-full md:w-auto"
                         >
                             <Mail size={20} />
                             <span>SEND ME AN EMAIL</span>
@@ -37,28 +37,28 @@ export function Contact() {
                             href="https://github.com/irfanoffici"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-4 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 hover:scale-110 transition-all duration-300 group"
+                            className="p-4 rounded-full bg-card-bg border border-card-border hover:bg-button-hover hover:scale-110 transition-all duration-300 group"
                             aria-label="GitHub"
                         >
-                            <Github size={24} className="text-zinc-400 group-hover:text-white transition-colors" />
+                            <Github size={24} className="text-text-secondary group-hover:text-foreground transition-colors" />
                         </a>
                         <a
                             href="https://linkedin.com/in/irfaanoffici"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-4 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 hover:scale-110 transition-all duration-300 group"
+                            className="p-4 rounded-full bg-card-bg border border-card-border hover:bg-button-hover hover:scale-110 transition-all duration-300 group"
                             aria-label="LinkedIn"
                         >
-                            <Linkedin size={24} className="text-zinc-400 group-hover:text-white transition-colors" />
+                            <Linkedin size={24} className="text-text-secondary group-hover:text-foreground transition-colors" />
                         </a>
                         <a
                             href="https://instagram.com/irfanoffici"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-4 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 hover:scale-110 transition-all duration-300 group"
+                            className="p-4 rounded-full bg-card-bg border border-card-border hover:bg-button-hover hover:scale-110 transition-all duration-300 group"
                             aria-label="Instagram"
                         >
-                            <Instagram size={24} className="text-zinc-400 group-hover:text-white transition-colors" />
+                            <Instagram size={24} className="text-text-secondary group-hover:text-foreground transition-colors" />
                         </a>
                     </div>
 

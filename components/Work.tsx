@@ -80,7 +80,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             whileHover={{ y: -5 }}
-            className="group relative flex flex-col p-8 rounded-3xl bg-white/5 border border-white/10 overflow-hidden hover:border-accent/50 transition-colors duration-500 cursor-pointer min-h-[300px]"
+            className="group relative flex flex-col p-8 rounded-3xl bg-zinc-900 dark:bg-card-bg border border-zinc-800 dark:border-card-border shadow-2xl dark:shadow-card overflow-hidden hover:border-accent/30 transition-all duration-500 cursor-pointer min-h-[300px]"
         >
             {/* Background Gradient Blob */}
             <div
@@ -95,16 +95,16 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                     </span>
                     <motion.div
                         whileHover={{ rotate: 45 }}
-                        className="p-2 rounded-full bg-white/10 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        className="p-2 rounded-full bg-zinc-800 dark:bg-button-hover text-white dark:text-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                     >
                         <ArrowUpRight size={20} />
                     </motion.div>
                 </div>
 
-                <h3 className="text-3xl md:text-4xl font-bold mb-4 text-foreground group-hover:text-white transition-colors">
+                <h3 className="text-3xl md:text-4xl font-bold mb-4 text-white dark:text-foreground group-hover:text-accent transition-colors">
                     {project.title}
                 </h3>
-                <p className="text-sm md:text-base text-muted-foreground group-hover:text-zinc-300 transition-colors leading-relaxed">
+                <p className="text-sm md:text-base text-zinc-400 dark:text-text-muted group-hover:text-zinc-200 dark:group-hover:text-zinc-300 transition-colors leading-relaxed">
                     {project.description}
                 </p>
 

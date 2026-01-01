@@ -22,7 +22,7 @@ export function Hero() {
                     transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
                     className="mb-8"
                 >
-                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-tight text-foreground bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-zinc-400">
+                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-tight text-foreground break-words hyphens-auto">
                         Mohammed Irfan
                     </h1>
                 </motion.div>
@@ -51,12 +51,12 @@ export function Hero() {
                         href="/Mohammed-Irfan-Resume.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group relative inline-flex items-center gap-3 px-8 py-3 bg-zinc-900/50 hover:bg-zinc-800/50 border border-white/10 rounded-full transition-all duration-300 hover:border-accent/40 backdrop-blur-sm"
+                        className="group relative inline-flex items-center gap-3 px-8 py-3 bg-card-bg hover:bg-button-hover border border-card-border rounded-full transition-all duration-300 hover:border-accent/40 backdrop-blur-sm shadow-card"
                     >
-                        <span className="text-sm font-bold tracking-widest uppercase text-zinc-300 group-hover:text-white transition-colors">
+                        <span className="text-sm font-bold tracking-widest uppercase text-text-secondary group-hover:text-foreground transition-colors">
                             View Resume
                         </span>
-                        <span className="w-1.5 h-1.5 rounded-full bg-accent group-hover:shadow-[0_0_8px_rgba(139,92,246,0.6)] transition-all duration-300" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-accent group-hover:shadow-[0_0_8px_rgba(109,40,217,0.6)] transition-all duration-300" />
                     </a>
                 </motion.div>
 

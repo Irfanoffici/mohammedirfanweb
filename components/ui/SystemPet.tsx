@@ -118,7 +118,7 @@ export function SystemPet() {
                     viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    className="text-white drop-shadow-[0_0_12px_rgba(255,255,255,0.6)]"
+                    className="text-foreground drop-shadow-xl dark:drop-shadow-[0_0_12px_rgba(255,255,255,0.6)] transition-colors duration-300"
                 >
                     {/* Main Body */}
                     <path

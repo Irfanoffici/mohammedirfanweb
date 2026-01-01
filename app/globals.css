@@ -1,21 +1,63 @@
 @import "tailwindcss";
 
 :root {
+  /* Light Mode (Maximum Contrast) */
+  --background: #f4f4f5;
+  /* Zinc-100: Distinctly gray to make white cards pop */
+  --foreground: #000000;
+  /* Pure Black for text */
+  --text-secondary: #3f3f46;
+  /* Zinc-700: Very dark gray for readability */
+  --text-muted: #52525b;
+  /* Zinc-600 */
+  --accent: #6d28d9;
+  /* Violet-700: Darker accent for white backgrounds */
+
+  /* Semantic Variables */
+  --card-bg: #ffffff;
+  /* Pure White for standard cards */
+  --card-foreground: #09090b;
+  /* Dark text */
+  --card-border: #e4e4e7;
+  /* Zinc-200 */
+  --button-hover: #f4f4f5;
+  /* Zinc-100 */
+
+  /* Standard Light Shadow */
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+.dark {
+  /* Dark Mode */
   --background: #050505;
-  /* Slightly softer black */
   --foreground: #ffffff;
   --text-secondary: #d4d4d8;
-  /* Zinc-300 */
+  --text-muted: #a1a1aa;
   --accent: #a78bfa;
-  /* Violet-400 */
+
+  /* Semantic Variables */
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-foreground: #ffffff;
+  --card-border: rgba(255, 255, 255, 0.1);
+  --button-hover: rgba(255, 255, 255, 0.1);
+
+  --shadow-card: none;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
   --color-accent: var(--accent);
   --font-sans: var(--font-inter);
+
+  --color-card-bg: var(--card-bg);
+  --color-card-foreground: var(--card-foreground);
+  --color-card-border: var(--card-border);
+  --color-button-hover: var(--button-hover);
+
+  --shadow-card: var(--shadow-card);
 }
 
 body {
@@ -23,36 +65,26 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Reduced noise utility */
 .glass-overlay {
+  background: rgba(255, 255, 255, 0.98);
+  /* Almost solid white */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.dark .glass-overlay {
   background: rgba(5, 5, 5, 0.85);
-  /* Slightly more transparency */
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  border-bottom: none;
 }
 
 .glass-subtle {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-/* Custom Typography Utilities (Bettina Sosa inspired) */
-.font-italic-bold {
-  font-weight: 900;
-  font-style: italic;
-  letter-spacing: -0.05em;
-}
-
-.text-glow {
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-}
-
-.purple-glow {
-  box-shadow: 0 0 50px -10px rgba(167, 139, 250, 0.3);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-card);
 }
 
 /* Custom Scrollbar */
@@ -61,14 +93,15 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #050505;
+  background: var(--background);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #27272a;
+  background: #a1a1aa;
+  /* Zinc-400 */
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #52525b;
+  background: var(--text-secondary);
 }

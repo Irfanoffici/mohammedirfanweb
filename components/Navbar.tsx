@@ -70,9 +70,9 @@ export function Navbar() {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="fixed inset-0 z-50 flex items-center justify-center glass-overlay"
+                        className="fixed inset-0 z-50 flex items-center justify-center glass-overlay overflow-y-auto"
                     >
-                        <nav className="relative z-10 flex flex-col items-center gap-6 md:gap-8">
+                        <nav className="relative z-10 flex flex-col items-center gap-6 md:gap-8 py-12 min-h-[min-content]">
                             {navItems.map((item, index) => (
                                 <motion.button
                                     key={item.name}

@@ -1,9 +1,12 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useTheme } from "next-themes";
 
 export function ParticleCursor() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
+    const { theme } = useTheme();
+    const isLight = theme === 'light';
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -36,7 +39,12 @@ export function ParticleCursor() {
                 this.size = Math.random() * 2 + 0.5; // Tiny specks
                 this.speedX = Math.random() * 2 - 1;
                 this.speedY = Math.random() * 2 - 1;
-                this.color = `rgba(${167 + Math.random() * 50}, ${139 + Math.random() * 50}, 250, ${Math.random() * 0.5 + 0.5})`; // Violet tones
+
+                const isLight = theme === 'light';
+                // Dark particles in light mode, Violet/White in dark mode
+                this.color = isLight
+                    ? `rgba(${50 + Math.random() * 50}, ${50 + Math.random() * 50}, ${50 + Math.random() * 50}, ${Math.random() * 0.4 + 0.2})`
+                    : `rgba(${167 + Math.random() * 50}, ${139 + Math.random() * 50}, 250, ${Math.random() * 0.5 + 0.5})`;
                 this.life = 100;
             }
 
@@ -98,12 +106,20 @@ export function ParticleCursor() {
             window.removeEventListener("resize", resize);
             window.removeEventListener("mousemove", handleMouseMove);
         };
+    }, [theme]);
+
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
     }, []);
+
+    if (!mounted) return null;
 
     return (
         <canvas
             ref={canvasRef}
-            className="fixed inset-0 pointer-events-none z-50 mix-blend-screen"
+            className={`fixed inset-0 pointer-events-none z-50 ${isLight ? 'mix-blend-normal' : 'mix-blend-screen'}`}
         />
     );
 }

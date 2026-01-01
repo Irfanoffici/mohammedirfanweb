@@ -60,7 +60,7 @@ export function Skills() {
     };
 
     return (
-        <section id="skills" className="py-32 px-6 md:px-12 bg-black relative">
+        <section id="skills" className="py-32 px-6 md:px-12 bg-background relative">
             <SectionReveal className="max-w-6xl mx-auto w-full border-t border-white/10 pt-20">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8">
                     {skillCategories.map((category, idx) => (
@@ -75,7 +75,7 @@ export function Skills() {
                                             href={item.url}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="text-xl md:text-2xl font-light text-text-secondary hover:text-white transition-colors cursor-pointer inline-block"
+                                            className="text-xl md:text-2xl font-light text-text-secondary hover:text-foreground transition-colors cursor-pointer inline-block"
                                             onMouseEnter={(e) => {
                                                 setHoveredSkill(item.name);
                                                 setMousePos({ x: e.clientX, y: e.clientY });
@@ -102,8 +102,8 @@ export function Skills() {
                                                     }}
                                                     className="pointer-events-none hidden md:block" // Hide on mobile strictly
                                                 >
-                                                    <div className="glass-subtle px-4 py-3 rounded-xl border border-white/10 shadow-2xl bg-black/80 max-w-[200px]">
-                                                        <p className="text-xs font-medium text-white leading-tight">
+                                                    <div className="glass-subtle px-4 py-3 rounded-xl border border-card-border shadow-2xl bg-card-bg/95 max-w-[200px]">
+                                                        <p className="text-xs font-medium text-foreground leading-tight">
                                                             {item.description}
                                                         </p>
                                                     </div>
