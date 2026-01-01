@@ -5,6 +5,8 @@ import { GrainOverlay } from "@/components/ui/GrainOverlay";
 import { AmbientBackground } from "@/components/ui/AmbientBackground";
 import { ParticleCursor } from "@/components/ui/ParticleCursor";
 import { SystemPet } from "@/components/ui/SystemPet";
+import { ThemeProvider } from "@/components/ui/ThemeProvider";
+import { SmoothScroll } from "@/components/ui/SmoothScroll";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -23,17 +25,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark scroll-smooth">
+    <html lang="en" className="dark scroll-smooth" suppressHydrationWarning>
       <body
         className={`${inter.variable} font-sans antialiased bg-background text-foreground min-h-screen flex flex-col`}
       >
-        <GrainOverlay />
-        <AmbientBackground />
-        <ParticleCursor />
-        <SystemPet />
-        <main className="relative z-10 flex-grow">
-          {children}
-        </main>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <SmoothScroll />
+          <GrainOverlay />
+          <AmbientBackground />
+          <ParticleCursor />
+          <SystemPet />
+          <main className="relative z-10 flex-grow">
+            {children}
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );

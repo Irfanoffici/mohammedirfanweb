@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 const navItems = [
     { name: "Home", to: "hero" },
@@ -47,6 +48,11 @@ export function Navbar() {
 
     return (
         <>
+            {/* Theme Toggle - Fixed Top Left or Right next to menu */}
+            <div className="fixed top-6 left-6 z-[60]">
+                <ThemeToggle />
+            </div>
+
             <motion.button
                 onClick={toggleMenu}
                 className="fixed top-6 right-6 z-[60] p-3 text-white mix-blend-difference opacity-80 hover:opacity-100 transition-opacity"
@@ -77,7 +83,7 @@ export function Navbar() {
                                     transition={{ delay: index * 0.05, duration: 0.4 }}
                                     className="group relative"
                                 >
-                                    <span className="text-4xl md:text-5xl font-bold tracking-tight text-white hover:text-accent transition-colors duration-300">
+                                    <span className="text-4xl md:text-5xl font-bold tracking-tight text-foreground hover:text-accent transition-colors duration-300">
                                         {item.name}
                                     </span>
                                 </motion.button>
